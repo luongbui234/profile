@@ -1,6 +1,8 @@
-import { animate, motion, useAnimation } from "motion/react";
+import { motion, useAnimation } from "motion/react";
 import { useEffect, useState } from "react";
 import EditorCursor from "../EditorCursor/EditorCursor";
+import luongBuiChill from "/src/assets/luongbuichill.jpg";
+import khungHinh from "/src/assets/khunghinh.png";
 
 export default function HomeComponent({ sectionHome }) {
   const speed = 0.1;
@@ -71,12 +73,12 @@ export default function HomeComponent({ sectionHome }) {
       <div className="relative size-[500px] flex justify-center items-center">
         <img
           className="rounded-md w-96"
-          src="./src/assets/luongbuichill.jpg"
+          src={luongBuiChill}
           alt="Lương đang chill"
         />
         <img
           className="absolute top-0 left-0 size-full"
-          src="./src/assets/khunghinh3.png"
+          src={khungHinh}
           alt=""
         />
       </div>

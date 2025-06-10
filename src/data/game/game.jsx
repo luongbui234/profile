@@ -1,8 +1,12 @@
+import clickCircle from "/src/assets/clickcircle.png";
+import pingPong from "/src/assets/pingpong.png";
+import snake from "/src/assets/snake.png";
+
 export const listGame = [
   {
     idGame: 1,
     img: {
-      src: "./src/assets/clickcircle.png",
+      src: clickCircle,
       alt: "Click Circle",
     },
     name: "Click Circle",
@@ -10,7 +14,7 @@ export const listGame = [
   {
     idGame: 2,
     img: {
-      src: "./src/assets/pingpong.png",
+      src: pingPong,
       alt: "Ping Pong",
     },
     name: "Ping Pong",
@@ -18,7 +22,7 @@ export const listGame = [
   {
     idGame: 3,
     img: {
-      src: "./src/assets/snake.png",
+      src: snake,
       alt: "Snake",
     },
     name: "Snake",

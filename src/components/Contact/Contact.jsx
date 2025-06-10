@@ -4,6 +4,7 @@ import { FaPhone, FaFacebook } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { useInView } from "react-intersection-observer";
 import EditorCursor from "../EditorCursor/EditorCursor";
+import nguoiBatTay from "/src/assets/nguoibattay.png";
 
 export default function ContactComponent({ sectionContact }) {
   const speed = 0.1;
@@ -94,11 +95,7 @@ export default function ContactComponent({ sectionContact }) {
           </div>
         </div>
         <div className="w-1/2 flex justify-center">
-          <img
-            src="./src/assets/2nguoibattay-xoaphong.png"
-            alt=""
-            className="h-[500px]"
-          />
+          <img src={nguoiBatTay} alt="" className="h-[500px]" />
         </div>
       </div>
     </div>

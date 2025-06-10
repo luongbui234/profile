@@ -1,13 +1,8 @@
-import {
-  motion,
-  useAnimate,
-  useAnimation,
-  useScroll,
-  useTransform,
-} from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "motion/react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import EditorCursor from "../EditorCursor/EditorCursor";
+import luongBui from "/src/assets/luongbui.jpeg";
 
 export default function AboutMeComponent({ sectionAboutMe }) {
   const speed = 0.1;
@@ -55,11 +50,7 @@ export default function AboutMeComponent({ sectionAboutMe }) {
       </p>
       <div className="flex justify-between items-center">
         <div className="relative w-1/2 flex justify-center items-center">
-          <img
-            className="size-96 rounded-md"
-            src="./src/assets/luongbui.jpeg"
-            alt="Lương Bùi"
-          />
+          <img className="size-96 rounded-md" src={luongBui} alt="Lương Bùi" />
           <div className="absolute top-0 size-96 border-[12px] rounded-md shadow-2xl">
             <motion.div
               variants={variantsOpen}
