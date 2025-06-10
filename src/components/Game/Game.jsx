@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ListGameComponent from "./ListGame";
 import ModalGameComponent from "../Modal/ModalGame";
 

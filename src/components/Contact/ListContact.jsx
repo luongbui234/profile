@@ -1,4 +1,3 @@
-import React from "react";
 import ItemContactComponent from "./ItemContact";
 
 export default function ListContactComponent({ listContact }) {
