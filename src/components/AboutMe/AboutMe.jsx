@@ -43,20 +43,46 @@ export default function AboutMeComponent({ sectionAboutMe }) {
     animate: { height: 0 },
   };
 
+  const title = "ABOUT ME";
+  const renderTitle = () => {
+    return title.split("").map((char, index) => {
+      return (
+        <motion.span
+          key={index}
+          className="whitespace-pre"
+          initial={{ y: "100%", opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.5, delay: index * 0.1 },
+          }}
+          viewport={{ once: true }}
+        >
+          {char}
+        </motion.span>
+      );
+    });
+  };
+
   return (
     <div ref={sectionAboutMe} id="aboutMe" className="container h-lvh">
-      <p className="h-1/6 text-6xl text-center text-white font-bold">
-        ABOUT ME
+      <p className="h-1/6 text-6xl text-[#E7F5DC] font-bold flex justify-center">
+        {renderTitle()}
       </p>
       <div className="flex justify-between items-center">
-        <div className="relative w-1/2 flex justify-center items-center">
+        <motion.div
+          initial={{ x: "-100%" }}
+          whileInView={{ x: 0, transition: { duration: 1, ease: "easeOut" } }}
+          viewport={{ once: true }}
+          className="relative w-1/2 flex justify-center items-center"
+        >
           <img className="size-96 rounded-md" src={luongBui} alt="Lương Bùi" />
-          <div className="absolute top-0 size-96 border-[12px] rounded-md shadow-2xl">
+          <div className="absolute top-0 size-96 border-[12px] border-[#728156] rounded-md shadow-2xl">
             <motion.div
               variants={variantsOpen}
               initial="initial"
               animate={open ? "animate" : null}
-              className="size-full bg-blue-500 flex items-end"
+              className="size-full bg-[#728156] flex items-end"
             >
               <div className="w-full h-[14%] flex justify-center">
                 <motion.svg
@@ -118,7 +144,7 @@ export default function AboutMeComponent({ sectionAboutMe }) {
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
         <div className="w-1/2">
           <motion.span
             ref={ref}

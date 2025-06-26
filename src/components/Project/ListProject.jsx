@@ -15,7 +15,7 @@ export default function ListProjectComponent({ handleOpenProject }) {
     });
   };
   return (
-    <div className="snap-x overflow-auto overflow-y-hidden flex gap-5 p-5">
+    <div className="snap-x overflow-hidden flex gap-5 p-5">
       {renderProject()}
     </div>
   );

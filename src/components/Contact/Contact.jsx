@@ -39,9 +39,33 @@ export default function ContactComponent({ sectionContact }) {
     return () => clearTimeout(timeoutId);
   }, [inView, currentIndex]);
 
+  const title = "CONTACT";
+  const renderTitle = () => {
+    return title.split("").map((char, index) => {
+      console.log(char);
+      return (
+        <motion.span
+          key={index}
+          className="whitespace-pre"
+          initial={{ y: "100%", opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.5, delay: index * 0.1 },
+          }}
+          viewport={{ once: true }}
+        >
+          {char}
+        </motion.span>
+      );
+    });
+  };
+
   return (
     <div ref={sectionContact} id="contact" className="container h-lvh">
-      <p className="h-1/6 text-6xl text-center text-white font-bold">CONTACT</p>
+      <p className="h-1/6 text-6xl text-[#E7F5DC] font-bold flex justify-center">
+        {renderTitle()}
+      </p>
       <div className="flex">
         <div className="w-1/2">
           <motion.span

@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import "./App.css";
+import "./index.css";
+import MenuComponent from "./components/Menu/Menu";
 import HomeComponent from "./components/Home/Home";
 import AboutMeComponent from "./components/AboutMe/AboutMe";
 import ProjectComponent from "./components/Project/Project";
-import ContactComponent from "./components/Contact/Contact";
-import MenuComponent from "./components/Menu/Menu";
 import GameComponent from "./components/Game/Game";
+import ContactComponent from "./components/Contact/Contact";
 
 function App() {
   const sectionHome = useRef(null);

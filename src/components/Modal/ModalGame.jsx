@@ -4,6 +4,8 @@ import ClickCircle from "../../data/game/src/ClickCircle";
 import PingPong from "../../data/game/src/PingPong";
 import Snake from "../../data/game/src/Snake";
 import { IoMdClose } from "react-icons/io";
+import JumpSquare from "../../data/game/src/JumpSquare";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function ModalGameComponent({
   openGame,
@@ -30,6 +32,9 @@ export default function ModalGameComponent({
       case 3:
         newSketch = Snake;
         break;
+      case 4:
+        newSketch = JumpSquare;
+        break;
     }
 
     if (newSketch) {
@@ -46,17 +51,23 @@ export default function ModalGameComponent({
     };
   }, [idGame]);
   return (
-    <div
-      className={`w-fit m-auto fixed left-0 top-10 right-0 ${
-        openGame === true ? "block" : "hidden"
-      } flex justify-center`}
-    >
-      <div ref={canvasRef}></div>
-      <IoMdClose
-        className="cursor-pointer"
-        onClick={handleCloseGame}
-        size={40}
-      />
-    </div>
+    <AnimatePresence>
+      {openGame && (
+        <motion.div
+          initial={{ opacity: 0, y: "-100%" }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+          exit={{ opacity: 0, y: "100%", transition: { duration: 1 } }}
+          className="w-fit m-auto fixed left-0 top-10 right-0 border-4 border-[#728156] rounded-lg"
+        >
+          <div ref={canvasRef} className="relative">
+            <IoMdClose
+              className="cursor-pointer absolute top-0 left-full"
+              onClick={handleCloseGame}
+              size={40}
+            />
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

@@ -15,8 +15,6 @@ export default function ListGameComponent({ handleOpenGame }) {
     });
   };
   return (
-    <div className="snap-x overflow-auto overflow-y-hidden flex gap-5 p-5">
-      {renderGame()}
-    </div>
+    <div className="snap-x overflow-hidden flex gap-5 p-5">{renderGame()}</div>
   );
 }

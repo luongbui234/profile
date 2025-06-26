@@ -1,8 +1,7 @@
 import { motion, useAnimation } from "motion/react";
 import { useEffect, useState } from "react";
 import EditorCursor from "../EditorCursor/EditorCursor";
-import luongBuiChill from "/src/assets/luongbuichill.jpg";
-import khungHinh from "/src/assets/khunghinh.png";
+import luongBuiChill from "/src/assets/luongbuichill.png";
 
 export default function HomeComponent({ sectionHome }) {
   const speed = 0.1;
@@ -71,15 +70,12 @@ export default function HomeComponent({ sectionHome }) {
         </motion.p>
       </motion.span>
       <div className="relative size-[500px] flex justify-center items-center">
-        <img
+        <motion.img
+          initial={{ x: "100%" }}
+          animate={{ x: 0, transition: { duration: 1, ease: "easeOut" } }}
           className="rounded-md w-96"
           src={luongBuiChill}
           alt="Lương đang chill"
-        />
-        <img
-          className="absolute top-0 left-0 size-full"
-          src={khungHinh}
-          alt=""
         />
       </div>
     </div>

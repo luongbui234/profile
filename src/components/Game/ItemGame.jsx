@@ -11,17 +11,23 @@ export default function ItemGameComponent({ index, game, handleOpenGame }) {
         opacity: 1,
         transition: { duration: 1, delay: index * 0.1 },
       }}
-      className="snap-start min-w-72 border flex flex-col items-center gap-5 p-5"
+      whileHover={{ scale: 1.05 }}
+      className="snap-start min-w-72 border-4 border-[#728156] rounded-lg flex flex-col items-center gap-5 p-5"
     >
-      <img className="size-60" src={game.img.src} alt={game.img.alt} />
+      <img
+        className="size-60 rounded-lg"
+        src={game.img.src}
+        alt={game.img.alt}
+      />
       <p className="text-2xl">{game.name}</p>
-      <button
-        className="bg-gray-300 p-2 rounded-lg flex items-center gap-2"
+      <motion.button
+        whileHover={{ scale: 1.2 }}
+        className="bg-[#98A77C] p-2 rounded-lg flex items-center gap-2"
         onClick={() => handleOpenGame(game.idGame)}
       >
         <span>Mở</span>
         <IoLogoGameControllerA size={30} />
-      </button>
+      </motion.button>
     </motion.div>
   );
 }
